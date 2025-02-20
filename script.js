@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const navUl = document.querySelector("nav ul");
 
     mobileMenuToggle.addEventListener("click", function () {
+        console.log("Mobile menu toggle clicked!"); // Debugging line
         navUl.classList.toggle("active"); // Toggle the dropdown menu
     });
     

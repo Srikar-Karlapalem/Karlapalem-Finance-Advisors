@@ -256,7 +256,7 @@ nav ul li a {
     background: #205295; /* Light background color */
     padding: 2rem;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
     opacity: 0;
     transform: translateY(-50px);
     transition: opacity 2s ease, transform 2s ease;
