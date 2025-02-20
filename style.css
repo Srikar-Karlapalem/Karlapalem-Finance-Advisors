@@ -125,7 +125,7 @@ nav ul li a {
 /* Hero Section - Full-width Image */
 .hero {
     background: url('ocean.jpg') no-repeat center center/cover; /* Ensure the image path is correct */
-    height: 50vh; /* Adjust height for mobile */
+    height: 100vh; /* Adjust height for mobile */
     position: relative;
     display: flex;
     align-items: center;
