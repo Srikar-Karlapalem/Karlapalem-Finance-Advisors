@@ -137,7 +137,7 @@ nav ul li a {
     padding: 1rem; /* Padding for mobile */
     border-radius: 10px;
     text-align: center;
-    max-width: 90%; /* Ensure the overlay doesn't overflow on small screens */
+    max-width: 60%; /* Ensure the overlay doesn't overflow on small screens */
     width: auto; /* Allow the overlay to adjust its width */
 }
 
