@@ -1,0 +1,668 @@
+/* General Styles */
+/* General Styles */
+html, body {
+    height: 100%; /* Ensure the html and body take up the full height of the viewport */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #205295;
+    background-color: #0A2647;
+}
+
+.container {
+    flex: 1; /* Allow the container to grow and fill the available space */
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 0; /* Add some padding to the container */
+}
+
+
+/* Header */
+header {
+    background: #0A2647; /* Darker header background */
+    color: #D3D9D4; /* Light text color */
+    padding: 0; /* Remove padding to control spacing manually */
+    position: relative;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between; /* Space between logo and nav */
+    align-items: center; /* Vertically center items */
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 60px; /* Set a fixed height for the header */
+}
+
+/* Logo Styles */
+header .logo img {
+    height: 100%; /* Make the logo fill the height of the header */
+    width: auto; /* Maintain aspect ratio */
+    max-width: 150px; /* Prevent the logo from stretching too wide */
+}
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+    header .container {
+        height: 50px; /* Slightly smaller header height for mobile */
+    }
+
+    header .logo img {
+        max-width: 120px; /* Smaller max-width for mobile */
+    }
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center; /* Vertically center nav items */
+}
+
+nav ul li {
+    margin: 0 1rem; /* Space between nav items */
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+nav ul li a {
+    color: #D3D9D4; /* Light text color */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+/* Mobile Navigation */
+.mobile-menu-toggle {
+    display: none; /* Hide by default */
+    font-size: 1.5rem;
+    color: #D3D9D4;
+    cursor: pointer;
+}
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: block; /* Show toggle button on smaller screens */
+    }
+
+    nav ul {
+        display: flex; /* Always show nav links */
+        flex-direction: column; /* Stack nav items vertically */
+        position: absolute;
+        top: 100%; /* Start at the bottom of the header */
+        right: 0;
+        background: #0A2647;
+        width: 100%;
+        text-align: center;
+        opacity: 0; /* Start hidden */
+        transform: translateY(-20px); /* Start slightly above */
+        visibility: hidden; /* Hide initially */
+        transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease; /* Smooth animation */
+        z-index: 1000; /* Ensure dropdown is above other content */
+    }
+
+    nav ul.active {
+        opacity: 1; /* Fully visible */
+        transform: translateY(0); /* Move to final position */
+        visibility: visible; /* Show dropdown */
+    }
+
+    nav ul li {
+        margin: 1rem 0; /* Space between stacked nav items */
+    }
+}
+
+/* Hero Section - Full-width Image */
+.hero {
+    background: url('ocean.jpg') no-repeat center center/cover; /* Ensure the image path is correct */
+    height: 50vh; /* Adjust height for mobile */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-overlay {
+    background: rgba(10, 38, 71, 0.7); /* Semi-transparent dark background */
+    padding: 1rem; /* Padding scales with font size */
+    border-radius: 10px;
+    text-align: center;
+    max-width: 90%; /* Ensure the overlay doesn't overflow on small screens */
+    width: auto; /* Allow the overlay to adjust its width */
+}
+
+.hero h2 {
+    font-size: 1.5rem; /* Smaller font size for mobile */
+    margin-bottom: 0.5rem; /* Smaller margin for mobile */
+    color: #D3D9D4; /* Light text color */
+}
+
+.hero p {
+    font-size: 1rem; /* Smaller font size for mobile */
+    color: #D3D9D4; /* Light text color */
+}
+
+/* Responsive Design for Larger Screens */
+@media (min-width: 768px) {
+    .hero {
+        height: 70vh; /* Increase height for larger screens */
+    }
+
+    .hero-overlay {
+        padding: 2rem; /* Increase padding for larger screens */
+        max-width: 60%; /* Adjust width for larger screens */
+    }
+
+    .hero h2 {
+        font-size: 2.5rem; /* Larger font size for larger screens */
+        margin-bottom: 1rem; /* Larger margin for larger screens */
+    }
+
+    .hero p {
+        font-size: 1.2rem; /* Larger font size for larger screens */
+    }
+}
+
+/* Features Section */
+.features {
+    padding: 2rem 0;
+    text-align: center;
+    background-color: #0A2647; /* Light background color */
+}
+
+.features .container {
+    display: flex;
+    flex-direction: column; /* Stack feature items vertically on mobile */
+    align-items: center; /* Center feature items horizontally */
+    gap: 1rem;
+}
+
+.features .feature-item {
+    background-color: #205295; /* White background for feature items */
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%; /* Full width on mobile */
+    max-width: 300px; /* Limit width for better readability */
+}
+
+.features img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.features h3 {
+    margin-top: 1rem;
+    color: #FFFFFF; /* Dark text color */
+}
+
+.features p {
+    color: #FFFFFF; /* Secondary text color */
+}
+
+/* Responsive Design for Larger Screens */
+@media (min-width: 600px) {
+    .features .container {
+        flex-direction: row; /* Arrange feature items horizontally on tablets */
+        flex-wrap: wrap;
+        justify-content: center; /* Center feature items horizontally */
+    }
+
+    .features .feature-item {
+        width: 48%; /* Two columns for tablets */
+        max-width: none; /* Remove max-width for tablets */
+    }
+}
+
+@media (min-width: 900px) {
+    .features .feature-item {
+        width: 30%; /* Three columns for desktops */
+    }
+}
+
+/* About Section */
+.about {
+    padding: 4rem 0;
+    text-align: center;
+    background-color: #FFFFFF; /* White background */
+}
+
+.about h2 {
+    color: #2E3944; /* Dark text color */
+    margin-bottom: 2rem;
+}
+
+.about-boxes {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* Default: 1 column for mobile */
+    gap: 2rem;
+    align-items: center;
+    padding: 0 1rem; /* Add some padding for smaller screens */
+}
+
+.about-box {
+    background: #205295; /* Light background color */
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(-50px);
+    transition: opacity 2s ease, transform 2s ease;
+}
+
+.about-box.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.about-box h3 {
+    color: #FFFFFF; /* Dark text color */
+    margin-bottom: 1rem;
+}
+
+.about-box p {
+    color: #FFFFFF; /* Secondary text color */
+    line-height: 1.6;
+}
+
+/* Responsive Design for Larger Screens */
+@media (min-width: 600px) {
+    .about-boxes {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+    }
+}
+
+@media (min-width: 900px) {
+    .about-boxes {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns for desktops */
+    }
+}
+
+.insights-page {
+    background: url('ocean2.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Insights Section */
+.insights {
+    padding: 4rem 0;
+}
+
+.insights h2 {
+    text-align: center;
+    color: #2E3944; /* Dark text color */
+    margin-bottom: 2rem;
+    font-size: 3rem;
+}
+
+.insights-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* Default: 1 column for mobile */
+    gap: 2rem;
+    padding: 0 1rem; /* Add some padding for smaller screens */
+}
+
+.insight-card {
+    background: #FFFFFF; /* White background for cards */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center; /* Center all text inside the card */
+}
+
+.insight-card:hover {
+    transform: translateY(-5px); /* Lift the card on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6); /* Add a stronger shadow on hover */
+}
+
+.insight-image img {
+    width: 100%;
+    height: 200px; /* Fixed height for images */
+    object-fit: cover; /* Ensure images cover the area */
+}
+
+.insight-date {
+    background: #F0F8FF; /* Light background for date */
+    color: #2E3944; /* Dark text color */
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    text-align: center; /* Center the date text */
+    font-weight: bold;
+    border-bottom: 1px solid #D3D9D4; /* Add a subtle border below the date */
+}
+
+.insight-content {
+    padding: 1.5rem;
+    text-align: center; /* Center the content text */
+}
+
+.insight-content h3 {
+    color: #2E3944; /* Dark text color */
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.insight-content p {
+    color: #748D92; /* Secondary text color */
+    line-height: 1.6;
+    margin: 0 auto; /* Center the paragraph text */
+    max-width: 80%; /* Limit the width for better readability */
+}
+
+/* Responsive Design for Larger Screens */
+@media (min-width: 600px) {
+    .insights-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+    }
+}
+
+@media (min-width: 900px) {
+    .insights-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns for desktops */
+    }
+}
+
+/* Article Page */
+.article-page {
+    background-color: #F9F9F9;
+}
+
+.article-container {
+    background: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    margin: 2rem auto;
+    padding: 2rem;
+    max-width: 800px;
+}
+
+.article-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.article-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.article-meta {
+    margin: 1rem 0;
+    font-size: 0.9rem;
+    color: #2E3944;
+}
+
+.article-date,
+.article-author {
+    display: inline-block;
+    margin: 0 0.5rem;
+}
+
+.article-title {
+    font-size: 2.5rem;
+    color: #2E3944;
+    margin: 1rem 0;
+}
+
+.article-subtitle {
+    font-size: 1.2rem;
+    color: #2E3944;
+    margin: 1rem 0;
+}
+
+.article-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #2E3944;
+}
+
+.article-content p {
+    margin: 1.5rem 0;
+}
+
+.article-content blockquote {
+    font-style: italic;
+    color: #2E3944;
+    border-left: 4px solid #124E66;
+    padding-left: 1rem;
+    margin: 2rem 0;
+}
+
+.contact-page {
+    background: url('ocean.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Ensure readability for the Contact section */
+
+
+.contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #2E3944; /* Dark text color */
+}
+
+.contact-info {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.contact-info p {
+    margin: 0.5rem 0;
+    color: #748D92; /* Secondary text color */
+}
+
+.contact-info a {
+    color: #124E66; /* Primary link color */
+    text-decoration: none;
+}
+
+.contact-form {
+    background: #FFFFFF70; /* Semi-transparent white background */
+    padding: 4rem 0;
+    text-align: center;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 800px;
+    margin: 3rem auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+.form-group label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #2E3944; /* Dark text color */
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #748D92; /* Secondary border color */
+    border-radius: 4px;
+    font-size: 1rem;
+    color: #212A31; /* Dark text color */
+    box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #124E66; /* Primary focus color */
+    outline: none;
+}
+
+.cta-button {
+    background: #124E66; /* Primary button color */
+    color: #D3D9D4; /* Light text color */
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+    background: #2E3944; /* Darker hover color */
+}
+
+/* Getting Started Section */
+.getting-started {
+    padding: 4rem 0;
+    text-align: center;
+    background-color: #FFFFFF; /* Light background color */
+}
+
+.getting-started h2 {
+    color: #2E3944; /* Dark text color */
+    margin-bottom: 2rem;
+}
+
+.dropdown {
+    margin-bottom: 1rem;
+    border: 2px solid #2E3944; /* Dark border color */
+    border-radius: 10px;
+    overflow: hidden;
+    transition: border 0.3s ease;
+}
+
+.dropdown.active {
+    border: 4px solid #2E3944; /* Darker active border */
+}
+
+.dropdown-toggle {
+    width: 100%;
+    padding: 1rem;
+    background: transparent;
+    color: #2E3944; /* Dark text color */
+    border: none;
+    text-align: left;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.dropdown-toggle:hover {
+    background: rgba(46, 57, 68, 0.1); /* Subtle hover effect */
+}
+
+.dropdown-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), padding 0.5s ease;
+    background: #FFFFFF; /* White background */
+    padding: 0 1rem;
+}
+
+.dropdown-content p {
+    padding: 1rem 0;
+    margin: 0;
+    color: #748D92; /* Secondary text color */
+}
+
+.dropdown.active .dropdown-content {
+    max-height: 200px;
+    padding: 1rem;
+}
+
+/* Footer */
+footer {
+    background: #2E3944;
+    color: #D3D9D4;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: auto; /* Push the footer to the bottom */
+}
+
+/* Media Queries for Responsive Design */
+@media (min-width: 768px) {
+    header .logo h1 {
+        text-align: left;
+    }
+
+    nav ul {
+        justify-content: flex-end;
+    }
+
+    .hero {
+        padding: 7rem 1rem;
+    }
+
+    .hero h2 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    .features .feature-item {
+        width: 48%;
+        margin: 1%;
+    }
+
+    .about-boxes {
+        flex-direction: row;
+    }
+
+    .about-box {
+        flex: 1;
+        margin: 0 1rem;
+    }
+
+    .contact h2 {
+        font-size: 3rem;
+    }
+
+    .contact-form {
+        max-width: 800px;
+        padding: 2.5rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 1.1rem;
+    }
+
+    .cta-button {
+        font-size: 1.2rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .features .feature-item {
+        width: 30%;
+        margin: 1%;
+    }
+
+    .contact-form {
+        max-width: 900px;
+        padding: 3rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 1.25rem;
+    }
+
+    .cta-button {
+        font-size: 1.3rem;
+    }
+}
