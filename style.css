@@ -28,7 +28,7 @@ body {
 header {
     background: #0A2647; /* Darker header background */
     color: #D3D9D4; /* Light text color */
-    padding: 0; /* Remove padding to control spacing manually */
+    padding: 0.5rem 0; /* Add some padding to the header */
     position: relative;
 }
 
@@ -43,10 +43,11 @@ header .container {
 }
 
 /* Logo Styles */
-header .logo img {
-    height: 100%; /* Make the logo fill the height of the header */
-    width: auto; /* Maintain aspect ratio */
-    max-width: 150px; /* Prevent the logo from stretching too wide */
+header .logo h1 {
+    margin: 0; /* Remove default margin */
+    font-size: 1.5rem; /* Adjust font size for desktop */
+    color: #D3D9D4; /* Light text color */
+    white-space: nowrap; /* Prevent text from wrapping */
 }
 
 /* Mobile Navigation */
@@ -55,8 +56,8 @@ header .logo img {
         height: 50px; /* Slightly smaller header height for mobile */
     }
 
-    header .logo img {
-        max-width: 120px; /* Smaller max-width for mobile */
+    header .logo h1 {
+        font-size: 1.2rem; /* Smaller font size for mobile */
     }
 }
 
