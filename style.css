@@ -137,18 +137,19 @@ nav ul li a {
     padding: 1rem; /* Padding for mobile */
     border-radius: 10px;
     text-align: center;
-    max-width: 90%; /* Ensure the overlay doesn't overflow on small screens */
+    max-width: 80%; /* Ensure the overlay doesn't overflow on small screens */
+    max-height: 70%;
     width: auto; /* Allow the overlay to adjust its width */
 }
 
 .hero h2 {
-    font-size: 8vw; /* Scales with viewport width */
+    font-size: 6vw; /* Scales with viewport width */
     margin-bottom: 0.5rem; /* Smaller margin for mobile */
     color: #D3D9D4; /* Light text color */
 }
 
 .hero p {
-    font-size: 6vw; /* Scales with viewport width */
+    font-size: 4vw; /* Scales with viewport width */
     color: #D3D9D4; /* Light text color */
 }
 
