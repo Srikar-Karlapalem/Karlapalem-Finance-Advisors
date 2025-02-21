@@ -124,7 +124,7 @@ nav ul li a {
 
 /* Hero Section - Full-width Image */
 .hero {
-    background: url('ocean.jpg') no-repeat center center/cover; /* Ensure the image path is correct */
+    background: url('images/ocean.jpg') no-repeat center center/cover; /* Ensure the image path is correct */
     height: 60vh; /* Explicitly set the height for mobile */
     min-height: 300px; /* Ensure a minimum height */
     position: relative;
@@ -194,7 +194,7 @@ nav ul li a {
     background-color: #205295; /* White background for feature items */
     padding: 1rem;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
     text-align: center;
     width: 100%; /* Full width on mobile */
     max-width: 300px; /* Limit width for better readability */
@@ -294,7 +294,7 @@ nav ul li a {
 }
 
 .insights-page {
-    background: url('ocean2.jpg') no-repeat center center fixed;
+    background: url('images/ocean2.jpg') no-repeat center center fixed;
     background-size: cover;
 }
 
@@ -447,7 +447,7 @@ nav ul li a {
 }
 
 .contact-page {
-    background: url('ocean.jpg') no-repeat center center fixed;
+    background: url('images/ocean.jpg') no-repeat center center fixed;
     background-size: cover;
 }
 
