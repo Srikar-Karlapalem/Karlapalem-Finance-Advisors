@@ -125,11 +125,13 @@ nav ul li a {
 /* Hero Section - Full-width Image */
 .hero {
     background: url('ocean.jpg') no-repeat center center/cover; /* Ensure the image path is correct */
-    height: 75vh; /* Adjust height for mobile */
+    height: 60vh; /* Explicitly set the height for mobile */
+    min-height: 300px; /* Ensure a minimum height */
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden; /* Prevent content from overflowing */
 }
 
 .hero-overlay {
@@ -137,19 +139,18 @@ nav ul li a {
     padding: 1rem; /* Padding for mobile */
     border-radius: 10px;
     text-align: center;
-    max-width: 80%; /* Ensure the overlay doesn't overflow on small screens */
-    max-height: 70%;
+    max-width: 90%; /* Ensure the overlay doesn't overflow on small screens */
     width: auto; /* Allow the overlay to adjust its width */
 }
 
 .hero h2 {
-    font-size: 4vw; /* Scales with viewport width */
+    font-size: 1.5rem; /* Smaller font size for mobile */
     margin-bottom: 0.5rem; /* Smaller margin for mobile */
     color: #D3D9D4; /* Light text color */
 }
 
 .hero p {
-    font-size: 3vw; /* Scales with viewport width */
+    font-size: 1rem; /* Smaller font size for mobile */
     color: #D3D9D4; /* Light text color */
 }
 
@@ -157,6 +158,7 @@ nav ul li a {
 @media (min-width: 768px) {
     .hero {
         height: 70vh; /* Increase height for larger screens */
+        min-height: 400px; /* Ensure a minimum height */
     }
 
     .hero-overlay {
